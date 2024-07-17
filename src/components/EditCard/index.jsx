@@ -108,9 +108,16 @@ const ButtonGroup = styled.div`
 `
 
 const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
-    const [formState, setFormState] = useState(initialData);
+    const [formData, setFormData] = useState({
+        titulo: initialData.titulo,
+        categoria: initialData.categoria,
+        imagem: initialData.imagem,
+        video: initialData.video,
+        descricao: initialData.descricao,
+    });
+
     const initialPlaceholders = {
-        nome: 'Escolha um titulo para o seu video',
+        titulo: 'Escolha um titulo para o seu video',
         categoria: 'Selecione uma categoria',
         imagem: 'Imagem',
         video: 'Video',
@@ -118,24 +125,24 @@ const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
     };
 
     useEffect(() => {
-        setFormState(initialData);
+        setFormData(initialData);
     }, [initialData]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormState((prevState) => ({
+        setFormData((prevState) => ({
             ...prevState,
             [name]: value,
         }));
     };
 
     const handleClear = () => {
-        setFormState(initialPlaceholders);
+        setFormData(initialPlaceholders);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(formState);
+        onSubmit(formData);
         onClose();
     };
 
@@ -150,12 +157,12 @@ const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
                 </CloseButton>
                 <form onSubmit={handleSubmit}>
                     <FormGroup>
-                        <Label htmlFor="nome">Título</Label>
+                        <Label htmlFor="titulo">Título</Label>
                         <Input
                             type="text"
-                            id="nome"
-                            name="nome"
-                            value={formState.nome}
+                            id="titulo"
+                            name="titulo"
+                            value={formData.titulo}
                             onChange={handleChange}
                             required
                         />
@@ -165,7 +172,7 @@ const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
                         <Select
                             id="categoria"
                             name="categoria"
-                            value={formState.categoria}
+                            value={formData.categoria}
                             onChange={handleChange}
                             required
                         >
@@ -181,7 +188,7 @@ const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
                             type="text"
                             id="imagem"
                             name="imagem"
-                            value={formState.imagem}
+                            value={formData.imagem}
                             onChange={handleChange}
                             required
                         />
@@ -192,7 +199,7 @@ const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
                             type="text"
                             id="video"
                             name="video"
-                            value={formState.video}
+                            value={formData.video}
                             onChange={handleChange}
                             required
                         />
@@ -203,7 +210,7 @@ const EditCard = ({ isOpen, onClose, onSubmit, initialData }) => {
                             as="textarea"
                             id="descricao"
                             name="descricao"
-                            value={formState.descricao}
+                            value={formData.descricao}
                             onChange={handleChange}
                             rows={4}
                             required

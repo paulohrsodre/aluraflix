@@ -54,22 +54,27 @@ const FromGroup = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    font-size: 20px;
     label {
-        font-size: 20px;
         font-weight: 600;
         line-height: 24px;
         text-transform: capitalize;
     }
     input, textarea, select {
-        height: 62px;
         background-color: transparent;
         border: 3px solid var(--color-dark-gray);
         border-radius: 15px;
         margin-top: 15px;
+        color: var(--color-gray);
+        padding: 16px;
     }
     textarea {
         width: 50%;
         height: 220px;
+    }
+    select > option {
+        background-color: var(--color-dark-gray);
+        
     }
 `
 
@@ -80,7 +85,7 @@ const ButtonGroup = styled.div`
 
 const FormCard = ({ handleAdd }) => {
     const [formData, setFormData] = useState({
-        nome: '',
+        titulo: '',
         categoria: '',
         imagem: '',
         video: '',
@@ -102,7 +107,7 @@ const FormCard = ({ handleAdd }) => {
 
     const handleClear = () => {
         setFormData({
-            nome: '',
+            titulo: '',
             categoria: '',
             imagem: '',
             video: '',
@@ -173,7 +178,7 @@ const FormCard = ({ handleAdd }) => {
                 </FormSection>
                 <FormSection>
                     <FromGroup>
-                        <label htmlFor="">Imagem</label>
+                        <label htmlFor="">Descrição</label>
                         <textarea 
                             id="descricao" 
                             name="descricao" 

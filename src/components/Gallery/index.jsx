@@ -51,10 +51,7 @@ const Gallery = ({ tag, variant, size, videos }) => {
     const [videoList, setVideoList] = useState(videos);
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log('videos prop:', videos)
-    console.log('tags prop:', tag)
     useEffect(() => {
-        console.log('Gallery useEffect', videos);
         setVideoList(videos);
         setIsLoading(false)
     }, [videos]);
@@ -99,7 +96,14 @@ const Gallery = ({ tag, variant, size, videos }) => {
                                 $image={video.imagem}
                                 onDelete={() => handleDelete(video.id)}
                                 onEdit={(updatedData) => handleEdit(video.id, updatedData)}
-                                data={video.data}
+                                data={{
+                                    id: video.id,
+                                    titulo: video.titulo,
+                                    categoria: video.categoria,
+                                    imagem: video.imagem,
+                                    video: video.video,
+                                    descricao: video.descricao,
+                                }}
                             />
                         </div>
                     ))}

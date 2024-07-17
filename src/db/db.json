@@ -4,20 +4,12 @@
       "id": "1",
       "titulo": "O que faz uma desenvolvedora Front-End?",
       "categoria": "frontend",
-      "imagem": "url da imagem",
-      "video": "../assets/frontendDev.png",
-      "descricao": "descricao do video"
-    },
-    {
-      "id": "2",
-      "titulo": "O que faz uma desenvolvedora Front-End?",
-      "categoria": "frontend",
-      "imagem": "url da imagem",
+      "imagem": "../assets/frontendDev.png",
       "video": "url do video",
       "descricao": "descricao do video"
     },
     {
-      "id": "3",
+      "id": "2",
       "titulo": "O que faz uma desenvolvedora Front-End?",
       "categoria": "frontend",
       "imagem": "url da imagem",
@@ -71,6 +63,14 @@
       "imagem": "url da imagem",
       "video": "url do video",
       "descricao": "descricao do video"
+    },
+    {
+      "id": "2687",
+      "titulo": "dwdawdaw",
+      "categoria": "frontend",
+      "imagem": "dwadaw",
+      "video": "dawdwa",
+      "descricao": "dwadaw"
     }
   ]
 }
