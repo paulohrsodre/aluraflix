@@ -63,9 +63,9 @@ const Home = () => {
                     thumbnail={thumbnail}
                 />
                 <GalleryContainer>
-                    <Gallery tag="Front-End" variant="frontend" size="large" videos={videos.frontend} />
-                    <Gallery tag="Back-End" variant="backend" size="large" videos={videos.backend} />
-                    <Gallery tag="Mobile" variant="mobile" size="large" videos={videos.mobile} />
+                    <Gallery tag="Front-End" $variant="frontend" $size="large" videos={videos.frontend} />
+                    <Gallery tag="Back-End" $variant="backend" $size="large" videos={videos.backend} />
+                    <Gallery tag="Mobile" $variant="mobile" $size="large" videos={videos.mobile} />
                 </GalleryContainer>
                 <Footer />
             </AppContainer>

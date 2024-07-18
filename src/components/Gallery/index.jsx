@@ -16,6 +16,8 @@ const Carousel = styled.div`
     justify-content: space-between;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
 
     &::-webkit-scrollbar {
         height: 8px;
@@ -34,7 +36,6 @@ const Carousel = styled.div`
     & > div {
         scroll-snap-align: start;
         flex: 0 0 30%;
-        margin-right: 1rem;
         width: 100%;
 
         @media (max-width: 1024px) {
@@ -47,7 +48,7 @@ const Carousel = styled.div`
     }
 `;
 
-const Gallery = ({ tag, variant, size, videos }) => {
+const Gallery = ({ tag, $variant, $size, videos }) => {
     const [videoList, setVideoList] = useState(videos);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -85,7 +86,7 @@ const Gallery = ({ tag, variant, size, videos }) => {
 
     return (
         <Section>
-            <Category variant={variant} size={size}>{tag}</Category>
+            <Category variant={$variant} size={$size}>{tag}</Category>
             {isLoading ? (
                 <p>Loading videos...</p>
             ) : (
@@ -115,8 +116,8 @@ const Gallery = ({ tag, variant, size, videos }) => {
 
 Gallery.propTypes = {
     tag: PropTypes.string.isRequired,
-    variant: PropTypes.oneOf(['frontend', 'backend', 'mobile']).isRequired,
-    size: PropTypes.oneOf(['large', 'small']).isRequired,
+    $variant: PropTypes.oneOf(['frontend', 'backend', 'mobile']).isRequired,
+    $size: PropTypes.oneOf(['large', 'small']).isRequired,
     videos: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

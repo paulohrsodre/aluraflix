@@ -12,7 +12,7 @@
       "id": "2",
       "titulo": "O que faz uma desenvolvedora Front-End?",
       "categoria": "frontend",
-      "imagem": "url da imagem",
+      "imagem": "https://example.com/static-image.jpg",
       "video": "url do video",
       "descricao": "descricao do video"
     },

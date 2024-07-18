@@ -10,14 +10,16 @@ const CardContainer = styled.div`
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1;
 `;
 
 const BackgroundImage = styled.div`
     width: 100%;
     height: 100%;
-    background-image: url(${({ $image }) => $image});
+    background-image: url(${props => props.$image});
     background-size: cover;
     background-position: center;
+    z-index: -1;
     filter: brightness(0.8);
 `;
 
@@ -66,8 +68,6 @@ const Card = ({ $image, onDelete, onEdit, data }) => {
         onEdit(updatedData);
         setModalOpen(false);
     };
-
-    console.log('Card data', data);
 
     return (
         <CardContainer>

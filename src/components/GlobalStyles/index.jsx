@@ -175,7 +175,10 @@ const GlobalStyles = createGlobalStyle`
     }
     [hidden] {
         display: none;
-    }    
+    }
+    div {
+        box-sizing: border-box;
+    }  
 `
 
 export default GlobalStyles
